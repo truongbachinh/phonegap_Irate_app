@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+    <title>I-Rating Application</title>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" class="headerPage">
+            <div data-role="navbar" style="text-align: center">
+                <p class="headerName">I-Rating</p>
+                <ul>
+                    <li><a class="viewBtn redirectBtn" id="add" onClick="view()" data-icon="eye" data-theme="g">View All
+                            Rating</a>
+                    </li>
+                    <li><a class="addBtn redirectBtn" id="view" onClick="add()" data-icon="plus">Add A Rating</a></li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <div data-role="navbar" class="ul-bar">
+                <ul>
+                    <li>
+                        <label for="typeSearch" id="searchLb">Search by </label>
+                        <select name="select-choice-1" id="typeSearch" required>
+                            <option value="name">Restaurant name</option>
+                            <option value="type">Restaurant type</option>
+                            <option value="price">Average price</option>
+                            <option value="reporter">Reporter</option>
+                            <option value="totalRating">Total Rating</option>
+
+                        </select>
+                    </li>
+                    <li> 
+                        <input id="txtSearch" name="search" data-type="search" placeholder="Find ...">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h1 class="nameTopRes">Top Restaurant</h1>
+            <p id="searchMessage" style=" display:none; color: red">No recoder</p>
+            <div data-role="content" class="listRestaurant">
+                <ul data-role="listview" id="viewSearch">
+
+                </ul>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <div data-role="footer" class="footerPage">
+            <h1>I-Rating Application</h1>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/indexedDB.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    <script type="text/javascript">
+        function view() {
+            window.location.href = 'view.html';
+        }
+        function add() {
+            window.location.href = 'add.html';
+        }
+        $(document).ready(function () {
+            $('.ad').bxSlider();
+        });
+
+
+    </script>
+
+</body>
+
+</html>

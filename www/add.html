@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/add.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/mobiscroll.javascript.min.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/mobiscroll.javascript.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/webcam.js"></script>
+    <title>Rating Application</title>
+</head>
+
+<body>
+    <div data-role="page" id="addPage">
+        <div data-role="header" class="headerPage">
+            <div data-role="navbar" style="text-align: center">
+                <p class="headerNameAdd">I-Rating</p>
+                <ul style="margin: 10px;">
+                    <li><a class="viewBtn redirectBtn" id="add" onclick="back()" data-icon="back">Back</a>
+                    </li>
+                    <li><a class="homeBtn redirectBtn" id="home" onclick="home()" data-icon="home">Home</a>
+                    </li>
+                    <li><a class="viewBtn redirectBtn" id="view" onclick="view()" data-icon="eye">View All Rating</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div role="main" class="ui-content">
+
+            <form id="reviewRestaurant" class="formAdd">
+                <div style="text-align: center">
+                    <p class="headerNameFormAdd">Rating Form</p>
+                </div>
+                <div class="fillForm">
+                    <label for="r-name">Restaurant Name:</label>
+                    <input type="text" name="rName" id="r-name" placeholder="Input name..." required>
+                </div>
+                <div class="fillForm">
+                    <label for="r-picture">Restaurant Picture:</label>
+                    <img src="img/logo.png" id="img" height="200px" width="200px" alt="Image preview..."
+                        style="display: none">
+                    <input type="file" data-icon="home" name="rPicture" id="r-picture" capture>
+
+                </div>
+                <div data-role="navbar">
+                    <div id="camera" style="display: none"></div>
+                    <a id="takePicture" data-icon="camera">Camera</a>
+                    <div id="results">
+                    </div>
+                </div>
+                <div class="fillForm">
+                    <label for="r-type" class="select">Restaurant Type:</label>
+                    <select id="r-type" name="rType" class="required" style="  background-color: #f9b34c !important;" }>
+                        <!-- <option value="">Choose an type</option> -->
+                        <option value="Fast food">Fast Food</option>
+                        <option value="Buffet">Buffet</option>
+                        <option value="Grill">Grill</option>
+                        <option value="See food">See food</option>
+                        <option value="Pizza">Pizzeria</option>
+                    </select>
+                </div>
+                <div class="fillForm">
+                    <label for="r-date">Date to visited:</label>
+                    <input type="date" id="r-date" name="rDate">
+                </div>
+                <div class="fillForm">
+                    <label for="r-time">Time to visited:</label>
+                    <input type="time" id="r-time" name="rTime">
+                </div>
+                <div class="fillForm">
+                    <label for="r-price">Average price:</label>
+                    <input type="text" id="r-price" name="rPrice" placeholder="Input price...">
+                </div>
+                <div class="mbsc-form">
+                    <div class="mbsc-form-group">
+                        <div class="mbsc-form-group-title" id="ratingStar">Rating restaurant:</div>
+                        <label class="mbsc-rating-warning">
+                            Service:
+                            <input mbsc-rating type="rating" id="service-r" name="rService" required />
+                            <span id="rServiceSp" class="addRating">OK !</span>
+                        </label>
+                        <label class="mbsc-rating-warning">
+                            Clean:
+                            <input mbsc-rating type="rating" id="clean-r" name="rClean" />
+                            <span id="rCleanSp" class="addRating">OK !</span>
+                        </label>
+                        <label class="mbsc-rating-warning">
+                            Food:
+                            <input mbsc-rating type="rating" id="food-r" name="rFood" required />
+                            <span id="rFoodSp" class="addRating">OK !</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="fillForm">
+                    <label for="note">Note:</label>
+                    <input id="note" name="rNote"></input>
+                </div>
+                <div class="fillForm">
+                    <label for="reporter">Name of reporter</label>
+                    <input type="text" id="reporter" name="rReporter" placeholder="Input reporter...">
+                </div class="fillForm">
+                <button type="submit" class="add-row" id="submit">Add Restaurant</button>
+            </form>
+        </div>
+        <br>
+        <br>
+        <div data-role="footer" class="footerPage">
+            <h1>I-Rating Application</h1>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/indexedDB.js"></script>
+    <script type="text/javascript" src="js/add.js"></script>
+
+    <!-- <script type="text/javascript" src="js/edit.js"></script> -->
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    <script type="text/javascript">
+        function home() {
+            window.location.href = 'index.html';
+        }
+        function view() {
+            window.location.href = 'view.html';
+        }
+        function back() {
+            window.history.back();
+        }
+    </script>
+    </div>
+</body>
+
+</html>
